@@ -36,9 +36,7 @@ export class AuthService {
             );
         }
         catch (error) {
-           console.error('Error on login', error);     
+           console.log('Error on login', error);   
         }
     }
-
-    //LogOut
 }

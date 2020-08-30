@@ -7,19 +7,23 @@
 <ion-content class="ion-padding" class="ion-margin">
     <ion-item>
         <ion-label position="floating">Usuario</ion-label>
-        <ion-input></ion-input>
+        <ion-input type="text" [(ngModel)]="user.email"></ion-input>
     </ion-item>
     <ion-item>
         <ion-label position="floating">Contraeña</ion-label>
-        <ion-input></ion-input>
+        <ion-input type="password" [(ngModel)]=" user.password "></ion-input>
     </ion-item>
 
-    <ion-button color="dark" class="ion-margin" shape="round" expand="block">Registrarte</ion-button>
+
+
+    <div class="center">
+        <ion-button color="dark" class="ion-margin" shape="round" (click)="register()"> Registrarte </ion-button>
+    </div>
 
     <ion-item class="ion-no-border ">
         <ion-label class="ion-text-center ">
             ¿Tienes cuenta?
-            <a>Inicia Sesión</a>
+            <a [routerLink]="['/login']"> Inicia Sesión </a>
         </ion-label>
     </ion-item>
 </ion-content>
