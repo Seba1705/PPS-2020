@@ -26,7 +26,7 @@ export class RegisterPage implements OnInit {
         const toast = await this.toast.create({
             message,
             duration: 2000,
-            position: "middle"
+            position: "top"
         });
         toast.present();
     }

@@ -14,10 +14,9 @@
     </ion-list>
     <ion-button color="dark " class="ion-margin ion-padding" shape="round " expand="block " type="submit " [disabled]="form.invalid ">Ingresar</ion-button>
 
-    <div class="ion-padding">
-        <ion-label class="ion-text-center">
-            ¿No tienes cuenta?
+    <div class="ion-padding center">
+        <ion-label>
+            ¿No tienes cuenta? <a [routerLink]="['/register']">Regístrate</a>
         </ion-label>
-        <small [routerLink]="['/register']">Regístrate</small>
     </div>
 </form>
