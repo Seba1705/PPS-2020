@@ -1,27 +1,23 @@
-<ion-header class="ion-no-border">
-    <ion-toolbar>
-        <ion-title>Inicio de sesión</ion-title>
-    </ion-toolbar>
-</ion-header>
+<form #form="ngForm" (ngSubmit)="login()" class="ion-padding">
+    <ion-list>
+        <ion-list-header class="ion-padding ion-text-center">
+            <ion-title>Inicio de sesión</ion-title>
+        </ion-list-header>
+        <ion-item>
+            <ion-label position="floating">Usuario</ion-label>
+            <ion-input type="text" name="email" [(ngModel)]="user.email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input type="password" name="password" [(ngModel)]=" user.password " minlength="6 " required></ion-input>
+        </ion-item>
+    </ion-list>
+    <ion-button color="dark " class="ion-margin ion-padding" shape="round " expand="block " type="submit " [disabled]="form.invalid ">Ingresar</ion-button>
 
-<ion-content class="ion-padding">
-    <ion-item>
-        <ion-label position="floating">Usuario</ion-label>
-        <ion-input type="text" [(ngModel)]="user.email"></ion-input>
-    </ion-item>
-    <ion-item>
-        <ion-label position="floating">Contraseña</ion-label>
-        <ion-input type="password" [(ngModel)]="user.password"></ion-input>
-    </ion-item>
-
-    <div class="center">
-        <ion-button color="dark " class="ion-margin-top" shape="round" (click)="login()" expand="block">Ingresar</ion-button>
-    </div>
-
-    <ion-item class="ion-no-border ">
-        <ion-label class="ion-text-center ">
+    <div class="ion-padding">
+        <ion-label class="ion-text-center">
             ¿No tienes cuenta?
         </ion-label>
-        <a [routerLink]="['/register']">Regístrate</a>
-    </ion-item>
-</ion-content>
+        <small [routerLink]="['/register']">Regístrate</small>
+    </div>
+</form>

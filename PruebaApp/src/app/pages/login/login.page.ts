@@ -3,6 +3,7 @@ import { User } from 'src/app/shared/user.class';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { LoadingController } from '@ionic/angular';
+import { AlertController } from '@ionic/angular';
 
 @Component({
     selector: 'app-login',
@@ -22,11 +23,12 @@ export class LoginPage implements OnInit {
     async login() {
         this.presentLoading('Cargando...');
         const user = await this.auth.onLogin(this.user);
-
+        
         if (user) {
             this.router.navigateByUrl('/user');
-            this.loading.dismiss();
         }
+        this.loading.dismiss();
+
     }
 
     async presentLoading(message: string) {
@@ -37,3 +39,4 @@ export class LoginPage implements OnInit {
         return this.loading.present();
     }
 }
+
