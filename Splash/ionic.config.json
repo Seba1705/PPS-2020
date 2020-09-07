@@ -1,0 +1,7 @@
+{
+  "name": "Splash",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -15,7 +15,9 @@ export class LoginPage implements OnInit {
     user = new User();
     loading: any;
 
-    constructor(private router: Router, private auth: AuthService, private loadingCtrl: LoadingController) { }
+    constructor(private router: Router, 
+                private auth: AuthService, 
+                private loadingCtrl: LoadingController) { }
 
     ngOnInit() {
     }

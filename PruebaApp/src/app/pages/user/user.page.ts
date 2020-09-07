@@ -10,7 +10,9 @@ import { ToastController } from '@ionic/angular';
 })
 export class UserPage implements OnInit {
 
-    constructor(private router: Router, private auth: AuthService, private toast: ToastController) { }
+    constructor(private router: Router, 
+                private auth: AuthService, 
+                private toast: ToastController) { }
 
     ngOnInit() {
     }
