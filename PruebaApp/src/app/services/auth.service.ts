@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-
 import { User } from '../shared/user.class';
 import { AlertController } from '@ionic/angular';
 
@@ -11,7 +10,9 @@ export class AuthService {
 
     isLogged:any = false;
 
-    constructor(public auth: AngularFireAuth, private alertController: AlertController) { 
+    constructor(public auth: AngularFireAuth, 
+                private alertController: AlertController) { 
+
         auth.authState.subscribe( user => this.isLogged = user)
     }
 

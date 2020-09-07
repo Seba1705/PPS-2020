@@ -16,7 +16,10 @@ export class RegisterPage implements OnInit {
     loading: any;
 
 
-    constructor(private router: Router, private auth: AuthService, private toast: ToastController, private loadingCtrl: LoadingController) { }
+    constructor(private router: Router, 
+                private auth: AuthService, 
+                private toast: ToastController, 
+                private loadingCtrl: LoadingController) { }
 
     ngOnInit() {
         

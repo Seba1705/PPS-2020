@@ -10,9 +10,15 @@ import { ToastController } from '@ionic/angular';
 })
 export class UserPage implements OnInit {
 
+    darkMode = true;
+
     constructor(private router: Router, 
                 private auth: AuthService, 
-                private toast: ToastController) { }
+                private toast: ToastController) {
+                
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+        this.darkMode = prefersDark.matches;
+    }
 
     ngOnInit() {
     }
@@ -31,6 +37,11 @@ export class UserPage implements OnInit {
             position: "top"
         });
         toast.present();
+    }
+
+    cambiarModo() {
+        this.darkMode = !this.darkMode;
+        document.body.classList.toggle('dark');
     }
 }
 
