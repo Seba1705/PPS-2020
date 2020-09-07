@@ -1,7 +1,7 @@
 {
   "name": "Splash",
   "integrations": {
-    "cordova": {}
+    "capacitor": {}
   },
   "type": "angular"
 }
