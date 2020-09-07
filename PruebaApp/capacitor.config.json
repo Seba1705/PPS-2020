@@ -1,12 +1,16 @@
 {
   "appId": "com.example.app",
-  "appName": "prueba-app",
+  "appName": "Prueba App",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
   "plugins": {
     "SplashScreen": {
-      "launchShowDuration": 0
+      "launchShowDuration": 3000,
+      "launchAutoHide": true,
+      "androidSpinnerStyle": "large",
+      "spinnerColor": "#999999",
+      "showSpinner": true
     }
   },
   "cordova": {},
