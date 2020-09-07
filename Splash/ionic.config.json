@@ -1,7 +1,0 @@
-{
-  "name": "Splash",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
