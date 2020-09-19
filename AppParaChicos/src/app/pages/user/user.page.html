@@ -1,0 +1,17 @@
+<ion-toolbar>
+    <ion-buttons slot="primary">
+        <ion-button color="dark" (click)="logout()">
+            <ion-icon slot="icon-only" md="log-out-outline"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+    <ion-title>Bienvenido!!!</ion-title>
+</ion-toolbar>
+<ion-body>
+    <ion-list>
+        <ion-item>
+            <ion-icon name="moon" slot="start"></ion-icon>
+            <ion-label>Modo Oscuro</ion-label>
+            <ion-toggle slot="end" [ngModel]="darkMode" (ionChange)="cambiarModo()"></ion-toggle>
+        </ion-item>
+    </ion-list>
+</ion-body>
