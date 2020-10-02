@@ -1,0 +1,62 @@
+<ion-header no-border no-shadow>
+  <ion-toolbar translucent mode="ios">
+    <ion-buttons slot="start">
+      <ion-back-button (click)="navCtrl.navigateForward(['/list', post.type])"></ion-back-button>
+    </ion-buttons>
+    <ion-title><ion-icon slot="start" src="assets/img/bildin-text.svg"></ion-icon></ion-title>    
+      <div class="avatar" slot="end">
+        <img [src]="user ? user.imageUrl : 'Cargando...'" (click)="presentAlertLogout()"> 
+      </div> 
+  </ion-toolbar>
+</ion-header>
+
+
+<div class="blank" *ngIf="spinner">
+  <ion-spinner color="primary"></ion-spinner>
+</div>
+
+
+<ion-content>
+  <div text-center *ngIf="isLoading">
+    <ion-spinner color="primary"></ion-spinner>
+  </div>
+  <ion-grid no-padding *ngIf="!isLoading">
+    <ion-row>
+      <ion-col size-sm="6" offset-sm="3" no-padding>
+        <ion-img class="foto" [src]="post.imageUrl"></ion-img>
+      </ion-col>
+    </ion-row>
+
+    <ion-list padding class="informacion">
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img [src]="post.user.imageUrl">
+        </ion-avatar>
+        <ion-label>
+          <h2>{{post.user.name ? post.user.name : 'sin usuario'}}</h2>
+        </ion-label>
+        <ion-icon class="corazon" *ngIf="!voted" (click)="onVote()" slot="end" src="assets/img/heart.svg"></ion-icon>
+        <ion-icon class="corazon" *ngIf="voted" (click)="onCancelVote()" slot="end" src="assets/img/heart-full.svg"></ion-icon>
+      </ion-item>
+
+      <ion-item class="titulo" lines="none">
+        <ion-label>
+          <h1>{{post.title}}</h1>
+        </ion-label>
+      </ion-item>
+
+      <ion-item lines="none">
+          <p>{{post.description}}</p>
+      </ion-item>
+
+      <ion-item >
+        <ion-label>
+          <h2>Fecha de carga:</h2>
+          <p style="font-weight: 800">{{post.date | date: 'medium'}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+  </ion-grid>
+</ion-content>
+

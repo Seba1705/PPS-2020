@@ -1,0 +1,51 @@
+<ion-header mode="ios" class="ion-no-border">
+  <ion-toolbar class="ion-no-border">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <span>m</span>orfy
+    </ion-title>
+    <ion-avatar slot="end" style="height:40px; width: 40px; margin-right: 8px;" *ngIf="user">
+      <img [src]="user ? user.imageUrl : 'Loading...'" (click)="logout()">
+    </ion-avatar>
+    <ion-buttons slot="start">
+      <ion-buttons slot="start">
+          <ion-back-button text=""></ion-back-button>
+      </ion-buttons>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-fab *ngIf="this.showQr" style="align-items: center;" vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button>
+    <app-qr-picker></app-qr-picker>
+  </ion-fab-button>
+</ion-fab>
+
+  
+<ion-content>
+
+  <ion-tabs #myTabs>
+    <div class="tabs">
+      <ion-tab-bar slot="bottom" translucent=“true” style="height: 70px;">
+        <ion-tab-button (click)="changeQr('home')" tab="home">
+          <ion-icon name="home-outline" size="large"></ion-icon>
+          <ion-label>Inicio</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button (click)="changeQr('orders')" tab="orders">
+          <ion-icon name="cart-outline" size="large"></ion-icon>
+          <ion-badge class="order-total" *ngIf="pendingOrder && orderTotal > 0">${{orderTotal}}</ion-badge>
+          <ion-label>Pedidos</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button (click)="changeQr('more')" tab="more">
+          <ion-icon name="ellipsis-horizontal" size="large"></ion-icon>
+          <ion-label>Mas</ion-label>
+        </ion-tab-button>
+
+      </ion-tab-bar>
+    </div>
+  </ion-tabs>
+
+</ion-content>

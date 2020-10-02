@@ -1,0 +1,50 @@
+<ion-header no-border no-shadow>
+  <ion-toolbar translucent mode="ios" [ngClass]="[ grupoActual === 'PPS-4B' ? 'color-2' : '']">
+      <ion-title>{{grupoActual}}</ion-title> 
+      <ion-buttons slot="start">
+              <ion-back-button text="" defaultHref="/grupo"></ion-back-button>
+          </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [ngClass]="[ grupoActual === 'PPS-4B' ? 'bg-chat-2' : 'bg-chat']">
+  
+    <div id="listaMensajes">
+    <ion-list>
+      <ion-item *ngFor="let item of mensajes"  lines="none">
+        
+        <ion-label style="margin: 0 0 10px 0;" [ngClass]="[ item.usuario === usuarioActual.id ? 'miMensaje' : 'nop']">   
+          <p class="mensaje" [ngClass]="[ grupoActual === 'PPS-4B' && item.usuario === usuarioActual.id ? 'color-2' : '']">
+            <span *ngIf="!(item.usuario === usuarioActual.id)" [ngClass]="[ grupoActual === 'PPS-4B' ? 'color-21' : '']">{{item.nombreUsuario}}</span>
+            <br *ngIf="!(item.usuario === usuarioActual.id)">{{item.mensaje}}</p>
+          <h5 class="hora">{{item.fecha}}</h5>
+        </ion-label>
+
+      </ion-item>
+    </ion-list>
+    </div>
+
+
+    <div class="bottom">
+      <ion-toolbar>
+        <ion-grid>
+          <ion-row class="enviar">
+            <ion-col  size="10" >
+              <ion-input  class="entrada" minlength="2" (keydown.enter)="enviar()" maxlength="40" [(ngModel)]="mensajeNuevo" type="text" placeholder="Escribe tu mensaje"></ion-input>
+            </ion-col>
+            <ion-col size="2">
+              <ion-button [ngClass]="[ grupoActual === 'PPS-4B' ? 'color-22' : '']" (click)="enviar()"><ion-icon name="send"></ion-icon></ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    
+      </ion-toolbar>
+    </div>
+
+</ion-content>
+
+
+
+<div class="spinnerInterceptor" *ngIf="showSpinner">
+  <ion-spinner name="crescent"></ion-spinner>
+</div>

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="end" fill="clear" (click)="logOut()"> Cerrar Sesión
+    </ion-button>
+    <ion-title>
+      Alarma de robo
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [ngClass]="{'fondo-rojo': background, 'fondo-negro': !background }" >
+  <div>
+    <div id="info-text" *ngIf="!activado" class="ion-padding" style="color: white;">
+      Activar alarma
+    </div>
+    <div id="info-text" *ngIf="activado" class="ion-padding" style="margin-top: 5%; color: white;">
+      Desactivar alarma
+    </div>
+    <div> 
+      <img src="assets/flecha.png" class="flecha" alt="">
+    </div>
+    <div *ngIf="!activado">
+      <ion-button class="boton-alarma" (click) = "activar()" color="lightGreenBlue">
+        <img src="../../assets/icon/logoNegro.png" class="imagen-alarma" alt="">
+      </ion-button>
+    </div>
+    <div *ngIf="activado">
+      <ion-button class="boton-alarma" (click) = "activar()" color="dark">
+        <img src="../../assets/icon/icon.png" class="imagen-alarma" alt="">
+      </ion-button>
+    </div>
+    <div *ngIf="activado" class="protegido">
+      <span><b>USTED SE ENCUENTRA PROTEGIDO</b></span>
+    </div>
+  </div>
+</ion-content>
