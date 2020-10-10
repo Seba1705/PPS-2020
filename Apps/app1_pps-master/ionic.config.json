@@ -1,7 +1,0 @@
-{
-  "name": "appRelevamiento",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "angular"
-}

@@ -1,8 +1,0 @@
-{
-  "appId": "io.ionic.starter",
-  "appName": "alarma-anti-robo",
-  "bundledWebRuntime": false,
-  "npmClient": "npm",
-  "webDir": "www",
-  "cordova": {}
-}

@@ -1,8 +1,0 @@
-{
-  "name": "alarma-anti-robo",
-  "integrations": {
-    "capacitor": {},
-    "cordova": {}
-  },
-  "type": "angular"
-}

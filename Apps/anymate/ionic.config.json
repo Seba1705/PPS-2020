@@ -1,7 +1,0 @@
-{
-  "name": "Anymate",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
